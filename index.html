@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Abi | Frontend Developer</title>
+
+<style>
+:root {
+    --bg: #f4f6f8;
+    --text: #000;
+    --card: #fff;
+    --primary: #2c3e50;
+}
+
+.dark {
+    --bg: #121212;
+    --text: #fff;
+    --card: #1e1e1e;
+    --primary: #0a66c2;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.3s;
+}
+
+header {
+    background: var(--primary);
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+nav {
+    background: #34495e;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    background: var(--card);
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    border-bottom: 2px solid #ddd;
+}
+
+.profile {
+    width: 150px;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.profile:hover {
+    transform: scale(1.1);
+}
+
+.project-box {
+    background: #eee;
+    padding: 15px;
+    border-left: 5px solid var(--primary);
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+}
+
+button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.social a {
+    background: #0a66c2;
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+}
+
+footer {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<button class="toggle" onclick="toggleMode()">🌙 / ☀️</button>
+
+<header>
+    <img src="profile.jpg" class="profile" alt="Profile Image">
+    <h1>Abi</h1>
+    <p>Frontend Developer (Beginner)</p>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<div class="container">
+
+<section id="about">
+<h2>About Me</h2>
+<p>
+I am Abi, a passionate frontend developer learning HTML, CSS, and JavaScript.
+My goal is to build beautiful and user-friendly websites.
+</p>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+<ul>
+<li>HTML</li>
+<li>CSS</li>
+<li>JavaScript</li>
+</ul>
+</section>
+
+<section id="projects">
+<h2>Projects</h2>
+<div class="project-box">
+<h3>Personal Portfolio</h3>
+<p>HTML, CSS, JavaScript portfolio website.</p>
+<button onclick="alert('More projects coming soon 🚀')">View</button>
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact Me</h2>
+
+<form onsubmit="return validateForm()">
+<input type="text" id="name" placeholder="Your Name">
+<input type="email" id="email" placeholder="Your Email">
+<textarea id="msg" placeholder="Your Message"></textarea>
+<button type="submit">Send</button>
+</form>
+
+<p id="error" style="color:red;"></p>
+
+<br>
+<a href="resume.pdf" download>
+<button>Download Resume 📄</button>
+</a>
+
+<br><br>
+<div class="social">
+<a href="https://www.linkedin.com/in/abirami-m-abirami-3aaa2a284" target="_blank">
+LinkedIn Profile
+</a>
+</div>
+</section>
+
+</div>
+
+<footer>
+© 2026 Abi | Frontend Developer
+</footer>
+
+<script>
+// Dark / Light Mode
+function toggleMode() {
+    document.body.classList.toggle("dark");
+}
+
+// Contact form validation
+function validateForm() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let msg = document.getElementById("msg").value;
+
+    if (name === "" || email === "" || msg === "") {
+        document.getElementById("error").innerText =
+        "Please fill all fields!";
+        return false;
+    }
+    alert("Message sent successfully 😊");
+    return true;
+}
+</script>
+
+</body>
+</html>
